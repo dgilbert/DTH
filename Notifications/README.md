@@ -1,5 +1,5 @@
 ####DTH.Notifications
-Compile-time, Static DLL.  
+Compile-time, Static DLL
 Classes:
 * INotificationPublisher – Defines interface methods that can be implemented.
 * NotificationPublisherFactory – Responsible for creating the dynamic Notification object.
