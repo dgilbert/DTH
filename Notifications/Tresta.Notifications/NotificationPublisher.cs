@@ -14,6 +14,11 @@ namespace Tresta.Notifications
             statementGeneratedNotification.publish();
         }
 
+        public void PublishStatementPosted(string statementId, string customerId, DateTime statementPosted, DateTime statementDue, string statementLink)
+        {
+            return;
+        }
+
         public void PublishCycleCharge(string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
         {
             return;

@@ -18,6 +18,16 @@ namespace DTH.Notifications
         void PublishStatementGenerated(string statementId, string customerId, DateTime statementGenerated, DateTime statemenDue, string statementLink);
 
         /// <summary>
+        /// Generated when a statement is posted for a customer
+        /// </summary>
+        /// <param name="statementId"></param>
+        /// <param name="customerId"></param>
+        /// <param name="statementGenerated"></param>
+        /// <param name="statemenDue"></param>
+        /// <param name="statementLink"></param>
+        void PublishStatementPosted(string statementId, string customerId, DateTime statementGenerated, DateTime statemenDue, string statementLink);
+
+        /// <summary>
         /// Generated when DTH attempts to charge a customer in authorize.net
         /// </summary>
         /// <param name="customerId"></param>

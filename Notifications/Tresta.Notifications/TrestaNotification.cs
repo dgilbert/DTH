@@ -40,6 +40,7 @@ namespace Tresta.Notifications
             string routingKey = ConfigurationSettings.AppSettings.Get("Tresta.Notifications.routingKey");
             TrestaNotification.basicPublish(serverAddress, exchange, exchangeType, routingKey, message);
         }
+
         private static void basicPublish(string serverAddress, string exchange, string exchangeType, string routingKey, string message)
         {
             ConnectionFactory cf = new ConnectionFactory();
