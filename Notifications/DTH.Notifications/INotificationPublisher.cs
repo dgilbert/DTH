@@ -37,7 +37,7 @@ namespace DTH.Notifications
         /// <param name="status"></param>
         /// <param name="currentBalance"></param>
         /// <param name="chargeDate"></param>
-        void PublishCycleCharge(string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate);
+        void PublishCycleCharge(string chargeId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate);
 
         /// <summary>
         /// Generated when One-Time Charge is added to the DTH
@@ -47,7 +47,7 @@ namespace DTH.Notifications
         /// <param name="amount"></param>
         /// <param name="chargeDate"></param>
         /// <param name="chargeDescription"></param>
-        void PublishOneTimeCharge(string customerId, string type, float amount, DateTime chargeDate, string chargeDescription);
+        void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription);
 
         /// <summary>
         /// Generated Credits/Debits are in Web Portal
@@ -57,6 +57,6 @@ namespace DTH.Notifications
         /// <param name="amount"></param>
         /// <param name="transactionType">Credit, De </param>
         /// <param name="currentBalance"></param>
-        void PublishTransaction(string customerId, string cardExternalId, float amount, string transactionType, float currentBalance);
+        void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance);
     }
 }

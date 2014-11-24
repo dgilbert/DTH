@@ -16,15 +16,15 @@ namespace DTH.Notifications.Default
         {
             return;
         }
-        public void PublishCycleCharge(string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
+        public void PublishCycleCharge(string chargeId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
         {
             return;
         }
-        public void PublishOneTimeCharge(string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
+        public void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
         {
             return;
         }
-        public void PublishTransaction(string customerId, string cardExternalId, float amount, string transactionType, float currentBalance)
+        public void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance)
         {
             return;
         }
