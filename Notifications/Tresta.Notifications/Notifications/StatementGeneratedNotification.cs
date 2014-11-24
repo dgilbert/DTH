@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
 
 namespace Tresta.Notifications
 {
-    [Serializable]
+    [DataContract]
     class StatementGeneratedNotification : TrestaNotification
     {
+        [DataMember(Name = "statementId")]
         private string _statementId;
         public string StatementId
         {
@@ -16,6 +17,7 @@ namespace Tresta.Notifications
             set { _statementId = value; }
         }
 
+        [DataMember(Name = "customerId")]
         private string _customerId;
         public string CustomerId
         {
@@ -23,20 +25,23 @@ namespace Tresta.Notifications
             set { _customerId = value; }
         }
         
-        private DateTime _statementGenerated;
-        public DateTime StatementGenerated
+        [DataMember(Name = "statementGenerated")]
+        private string _statementGenerated;
+        public string StatementGenerated
         {
             get { return _statementGenerated; }
             set { _statementGenerated = value; }
         }
 
-        private DateTime _statementDue;
-        public DateTime StatementDue
+        [DataMember(Name = "statementDue")]
+        private string _statementDue;
+        public string StatementDue
         {
             get { return _statementDue; }
             set { _statementDue = value; }
         }
 
+        [DataMember(Name = "statementLink")]
         private string _statementLink;
         public string StatementLink
         {
@@ -44,16 +49,7 @@ namespace Tresta.Notifications
             set { _statementLink = value; }
         }
         
-        public StatementGeneratedNotification()
+        public StatementGeneratedNotification() : base()
         { }
-
-        public StatementGeneratedNotification(string statementId, string customerId, DateTime statementGenerated, DateTime statementDue, string statementLink)
-        {
-            this._statementId = statementId;
-            this._customerId = customerId;
-            this._statementGenerated = statementGenerated;
-            this._statementDue = statementDue;
-            this._statementLink = statementLink;
-        }
     }
 }

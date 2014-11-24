@@ -1,16 +1,32 @@
 ﻿using System;
 using System.Text;
-using RabbitMQ.Client;
 using System.Web;
 using System.Configuration;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.IO;
 
 namespace Tresta.Notifications
 {
-    [Serializable]
+    [DataContract]
     public class TrestaNotification
     {
+        [DataMember(Name = "eventName")]
+        private string _eventName;
+        public string EventName
+        {
+            get { return _eventName; }
+            set { _eventName = value; }
+        }
+
+        [DataMember(Name = "eventCategory")]
+        private string _eventCategory;
+        public string EventCategory
+        {
+            get { return _eventCategory; }
+            set { _eventCategory = value; }
+        }
+
         public string toJSON()
         {
             DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(this.GetType());
@@ -19,6 +35,12 @@ namespace Tresta.Notifications
                 jsonSerializer.WriteObject(ms, this);
                 return Encoding.UTF8.GetString(ms.ToArray());
             }
+        }
+
+        public TrestaNotification()
+        {
+            _eventName = this.GetType().Name;
+            _eventCategory = "Notificaton";
         }
 
         public void publish()
@@ -38,28 +60,7 @@ namespace Tresta.Notifications
             string exchangeType = ConfigurationSettings.AppSettings.Get("Tresta.Notifications.exchangeType");
             string exchange = ConfigurationSettings.AppSettings.Get("Tresta.Notifications.exchange");
             string routingKey = ConfigurationSettings.AppSettings.Get("Tresta.Notifications.routingKey");
-            TrestaNotification.basicPublish(serverAddress, exchange, exchangeType, routingKey, message);
-        }
-
-        private static void basicPublish(string serverAddress, string exchange, string exchangeType, string routingKey, string message)
-        {
-            ConnectionFactory cf = new ConnectionFactory();
-            cf.Uri = serverAddress;
-
-            using (IConnection conn = cf.CreateConnection())
-            {
-                using (IModel ch = conn.CreateModel())
-                {
-                    if (exchange != "")
-                    {
-                        ch.ExchangeDeclare(exchange, exchangeType);
-                    }
-                    ch.BasicPublish(exchange,
-                                    routingKey,
-                                    null,
-                                    Encoding.UTF8.GetBytes(message));
-                }
-            }
+            AMQPUtil.basicPublish(serverAddress, exchange, exchangeType, routingKey, message);
         }
     }
 }
