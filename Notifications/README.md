@@ -42,7 +42,7 @@ public void PublishTransaction(string customerId, string cardExternalId, string 
   * This object will be converted to JSON and published to RabbitMQ based on the settings retrieved from app.config.
 
 
-Ex.
+Example App.config
 ```
 <add key="Tresta.Notifications.serverAddress" value="amqp://trestadevaio10_user:trestadevaio10_password@aio10.tresta-aio.com:5672/"/>
 <add key="Tresta.Notifications.exchangeType" value="topic"/>
