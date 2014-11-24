@@ -10,29 +10,59 @@ namespace Tresta.Notifications
     {        
         public void PublishStatementGenerated(string statementId, string customerId, DateTime statementGenerated, DateTime statementDue, string statementLink)
         {
-            StatementGeneratedNotification statementGeneratedNotification = new StatementGeneratedNotification(statementId, customerId, statementGenerated, statementDue, statementLink);
+            StatementGeneratedNotification statementGeneratedNotification = new StatementGeneratedNotification();
+            statementGeneratedNotification.StatementId = statementId;
+            statementGeneratedNotification.CustomerId = customerId;
+            statementGeneratedNotification.StatementGenerated = statementGenerated.ToString("o");
+            statementGeneratedNotification.StatementDue = statementDue.ToString("o");
+            statementGeneratedNotification.StatementLink = statementLink;
             statementGeneratedNotification.publish();
         }
 
         public void PublishStatementPosted(string statementId, string customerId, DateTime statementPosted, DateTime statementDue, string statementLink)
         {
-            return;
+            StatementPostedNotification statementPostedNotification = new StatementPostedNotification();
+            statementPostedNotification.StatementId = statementId;
+            statementPostedNotification.CustomerId = customerId;
+            statementPostedNotification.StatementPosted = statementPosted.ToString("o");
+            statementPostedNotification.StatementDue = statementDue.ToString("o");
+            statementPostedNotification.StatementLink = statementLink;
+            statementPostedNotification.publish();
         }
 
         public void PublishCycleCharge(string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
         {
-            return;
+            CycleChargeNotification cycleChargeNotification = new CycleChargeNotification();
+            cycleChargeNotification.CustomerId = customerId;
+            cycleChargeNotification.CardExternalId = cardExternalId;
+            cycleChargeNotification.AuthorizeDotNetTransactionId = authorizeNetTransactionId;
+            cycleChargeNotification.Amount = amount.ToString("0.00");
+            cycleChargeNotification.ChargeStatus = status;
+            cycleChargeNotification.CurrentBalance = currentBalance.ToString("0.00");
+            cycleChargeNotification.ChargeDate = chargeDate.ToString("o");
+            cycleChargeNotification.publish();
         }
 
-        public void PublishOneTimeCharge(string customerId, string type, string amount, string chargeDate, string chargeDescription)
+        public void PublishOneTimeCharge(string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
         {
+            OneTimeChargeNotification oneTimeChargeNotification = new OneTimeChargeNotification();
+            oneTimeChargeNotification.CustomerId = customerId;
+            oneTimeChargeNotification.ChargeType = type;
+            oneTimeChargeNotification.Amount = amount.ToString("0.00");
+            oneTimeChargeNotification.ChargeDate = chargeDate.ToString("o");
+            oneTimeChargeNotification.ChargeDescription = chargeDescription;
+            oneTimeChargeNotification.publish();
         }
 
-        public void PublishTransaction(string customerId, string cardExternalId, string amount, string transactionType, float currentBalance)
+        public void PublishTransaction(string customerId, string cardExternalId, float amount, string transactionType, float currentBalance)
         {
-            return;
+            TransactionNotification transactionNotification = new TransactionNotification();
+            transactionNotification.CustomerId = customerId;
+            transactionNotification.CardExternalId = cardExternalId;
+            transactionNotification.Amount = amount.ToString("0.00");
+            transactionNotification.TransactionType = transactionType;
+            transactionNotification.CurrentBalance = currentBalance.ToString("0.00");
+            transactionNotification.publish();
         }
-
-
     }
 }

@@ -20,11 +20,11 @@ namespace DTH.Notifications.Default
         {
             return;
         }
-        public void PublishOneTimeCharge(string customerId, string type, string amount, string chargeDate, string chargeDescription)
+        public void PublishOneTimeCharge(string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
         {
             return;
         }
-        public void PublishTransaction(string customerId, string cardExternalId, string amount, string transactionType, float currentBalance)
+        public void PublishTransaction(string customerId, string cardExternalId, float amount, string transactionType, float currentBalance)
         {
             return;
         }

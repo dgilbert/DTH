@@ -18,8 +18,6 @@ namespace DTH.Notifications
 
         private static INotificationPublisher GetInstance(string dllLocation, string typeName)
         {
-            // TODO:  Add error checking around this -- Not sure we want to crash the calling side to crash if user fails to implement interfaces correctly.
-            // Maybe return an instance of the default so calling side won't crash?
             Assembly assembly = Assembly.LoadFrom(dllLocation);
             if(assembly != null)
             {
