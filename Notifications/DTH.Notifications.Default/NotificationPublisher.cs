@@ -16,7 +16,7 @@ namespace DTH.Notifications.Default
         {
             return;
         }
-        public void PublishCycleCharge(string chargeId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
+        public void PublishCycleCharge(string paymentId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
         {
             return;
         }
