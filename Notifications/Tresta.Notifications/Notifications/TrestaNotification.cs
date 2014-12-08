@@ -11,7 +11,7 @@ namespace Tresta.Notifications
     [DataContract]
     public class TrestaNotification
     {
-        [DataMember(Name = "eventName")]
+        [DataMember(Name = "Event-Name")]
         private string _eventName;
         public string EventName
         {
@@ -19,7 +19,7 @@ namespace Tresta.Notifications
             set { _eventName = value; }
         }
 
-        [DataMember(Name = "eventCategory")]
+        [DataMember(Name = "Event-Category")]
         private string _eventCategory;
         public string EventCategory
         {
@@ -40,7 +40,7 @@ namespace Tresta.Notifications
         public TrestaNotification()
         {
             _eventName = this.GetType().Name;
-            _eventCategory = "Notificaton";
+            _eventCategory = "Notification";
         }
 
         public void publish()

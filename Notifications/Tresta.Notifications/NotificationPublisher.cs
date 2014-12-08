@@ -33,6 +33,7 @@ namespace Tresta.Notifications
         public void PublishCycleCharge(string paymentId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
         {
             CycleChargeNotification cycleChargeNotification = new CycleChargeNotification();
+            cycleChargeNotification.PaymentId = paymentId;
             cycleChargeNotification.CustomerId = customerId;
             cycleChargeNotification.CardExternalId = cardExternalId;
             cycleChargeNotification.AuthorizeDotNetTransactionId = authorizeNetTransactionId;
@@ -46,6 +47,7 @@ namespace Tresta.Notifications
         public void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
         {
             OneTimeChargeNotification oneTimeChargeNotification = new OneTimeChargeNotification();
+            oneTimeChargeNotification.ChargeId = chargeId;
             oneTimeChargeNotification.CustomerId = customerId;
             oneTimeChargeNotification.ChargeType = type;
             oneTimeChargeNotification.Amount = amount.ToString("0.00");
@@ -57,6 +59,7 @@ namespace Tresta.Notifications
         public void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance)
         {
             TransactionNotification transactionNotification = new TransactionNotification();
+            transactionNotification.TransactionId = transactionId;
             transactionNotification.CustomerId = customerId;
             transactionNotification.CardExternalId = cardExternalId;
             transactionNotification.Amount = amount.ToString("0.00");

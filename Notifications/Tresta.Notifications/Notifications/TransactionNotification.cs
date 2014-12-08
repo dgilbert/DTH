@@ -9,6 +9,14 @@ namespace Tresta.Notifications
     [DataContract]
     class TransactionNotification : TrestaNotification
     {
+        [DataMember(Name = "transactionId")]
+        private string _transactionId;
+        public string TransactionId
+        {
+            get { return _transactionId; }
+            set { _transactionId = value; }
+        }
+
         [DataMember(Name = "customerId")]
         private string _customerId;
         public string CustomerId

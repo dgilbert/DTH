@@ -10,6 +10,14 @@ namespace Tresta.Notifications
     [DataContract]
     class CycleChargeNotification : TrestaNotification
     {
+        [DataMember(Name = "paymentId")]
+        private string _paymentId;
+        public string PaymentId
+        {
+            get { return _paymentId; }
+            set { _paymentId = value; }
+        }
+
         [DataMember(Name = "customerId")]
         private string _customerId;
         public string CustomerId

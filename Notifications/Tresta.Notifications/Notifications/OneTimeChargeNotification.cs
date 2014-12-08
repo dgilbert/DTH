@@ -9,6 +9,14 @@ namespace Tresta.Notifications
     [DataContract]
     class OneTimeChargeNotification : TrestaNotification
     {
+        [DataMember(Name = "chargeId")]
+        private string _chargeId;
+        public string ChargeId
+        {
+            get { return _chargeId; }
+            set { _chargeId = value; }
+        }
+
         [DataMember(Name = "customerId")]
         private string _customerId;
         public string CustomerId
