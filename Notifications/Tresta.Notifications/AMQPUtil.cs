@@ -21,9 +21,14 @@ namespace Tresta.Notifications
                     {
                         ch.ExchangeDeclare(exchange, exchangeType);
                     }
+                    
+                    IBasicProperties basicProps = ch.CreateBasicProperties();
+                    basicProps.ContentType = "application/json";
+                    basicProps.DeliveryMode = 2;
+
                     ch.BasicPublish(exchange,
                                     routingKey,
-                                    null,
+                                    basicProps,
                                     Encoding.UTF8.GetBytes(payload));
                 }
             }
