@@ -16,7 +16,7 @@ namespace DTH.Notifications.Tester
             {
                 INotificationPublisher publisher = NotificationPublisher.Instance;
 
-                publisher.PublishCycleCharge("CHRG-CYCLE", "123456789", "1111111111", "TRANSID-123456789", 59.95f, "APPROVED", 0.00f, DateTime.Now);
+                publisher.PublishCycleCharge("CHRG-CYCLE", "123456789", "1111111111", "TRANSID-123456789", 59.95f, "APPROVED", 0.00f, DateTime.Now, 59.95f);
 
                 publisher.PublishOneTimeCharge("CHRG-ONETIME", "123456789", "ONETIMECHARGETYPE", 100.00f, DateTime.Now, "One time charge description");
 
@@ -24,7 +24,7 @@ namespace DTH.Notifications.Tester
 
                 publisher.PublishStatementPosted("STATEMENTPOSTED-ID", "123456789", DateTime.Now, DateTime.Now.AddDays(5), @"http://dthapi01-aio10.tresta.com/statements/STATEMENTPOSTED-ID");
 
-                publisher.PublishTransaction("TRANS-ID", "123456789", Guid.NewGuid().ToString(), 123.00f, "CREDIT", 45.00f);
+                publisher.PublishTransaction("TRANS-ID", "123456789", Guid.NewGuid().ToString(), 123.00f, "CREDIT", 45.00f, 168.00f);
                 
                 ++i;
             }

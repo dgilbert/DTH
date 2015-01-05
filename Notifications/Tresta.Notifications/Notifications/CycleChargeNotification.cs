@@ -74,6 +74,14 @@ namespace Tresta.Notifications
             set { _chargeDate = value; }
         }
 
+        [DataMember(Name = "previousBalance")]
+        private string _previousBalance;
+        public string PreviousBalance
+        {
+            get { return _previousBalance; }
+            set { _previousBalance = value; }
+        }
+
         public CycleChargeNotification() : base()
         { }
     }

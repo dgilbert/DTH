@@ -57,6 +57,14 @@ namespace Tresta.Notifications
             set { _currentBalance = value; }
         }
 
+        [DataMember(Name = "previousBalance")]
+        private string _previousBalance;
+        public string PreviousBalance
+        {
+            get { return _previousBalance; }
+            set { _previousBalance = value; }
+        }
+
         public TransactionNotification() : base()
         { }
     }

@@ -28,7 +28,7 @@ namespace DTH.Notifications
         void PublishStatementPosted(string statementId, string customerId, DateTime statementGenerated, DateTime statemenDue, string statementLink);
 
         /// <summary>
-        /// Generated when DTH attempts to charge a customer in authorize.net
+        /// Generated when DTH attempts to cycle charge a customer in authorize.net
         /// </summary>
         /// <param name="paymentId"></param>
         /// <param name="customerId"></param>
@@ -38,7 +38,8 @@ namespace DTH.Notifications
         /// <param name="status"></param>
         /// <param name="currentBalance"></param>
         /// <param name="chargeDate"></param>
-        void PublishCycleCharge(string paymentId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate);
+        /// <param name="previousBalance"></param>
+        void PublishCycleCharge(string paymentId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate, float previousBalance);
 
         /// <summary>
         /// Generated when One-Time Charge is added to the DTH
@@ -60,6 +61,7 @@ namespace DTH.Notifications
         /// <param name="amount"></param>
         /// <param name="transactionType"></param>
         /// <param name="currentBalance"></param>
-        void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance);
+        /// <param name="previousBalance"></param>
+        void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance, float previousBalance);
     }
 }

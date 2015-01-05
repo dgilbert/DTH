@@ -30,7 +30,7 @@ namespace Tresta.Notifications
             statementPostedNotification.publish();
         }
 
-        public void PublishCycleCharge(string paymentId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate)
+        public void PublishCycleCharge(string paymentId, string customerId, string cardExternalId, string authorizeNetTransactionId, float amount, string status, float currentBalance, DateTime chargeDate, float previousBalance)
         {
             CycleChargeNotification cycleChargeNotification = new CycleChargeNotification();
             cycleChargeNotification.PaymentId = paymentId;
@@ -41,6 +41,7 @@ namespace Tresta.Notifications
             cycleChargeNotification.ChargeStatus = status;
             cycleChargeNotification.CurrentBalance = currentBalance.ToString("0.00");
             cycleChargeNotification.ChargeDate = chargeDate.ToString("o");
+            cycleChargeNotification.PreviousBalance = previousBalance.ToString("0.00");
             cycleChargeNotification.publish();
         }
 
@@ -56,7 +57,7 @@ namespace Tresta.Notifications
             oneTimeChargeNotification.publish();
         }
 
-        public void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance)
+        public void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance, float previousBalance)
         {
             TransactionNotification transactionNotification = new TransactionNotification();
             transactionNotification.TransactionId = transactionId;
@@ -65,6 +66,7 @@ namespace Tresta.Notifications
             transactionNotification.Amount = amount.ToString("0.00");
             transactionNotification.TransactionType = transactionType;
             transactionNotification.CurrentBalance = currentBalance.ToString("0.00");
+            transactionNotification.PreviousBalance = previousBalance.ToString("0.00");
             transactionNotification.publish();
         }
     }
