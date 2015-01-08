@@ -49,7 +49,7 @@ public void PublishStatementGenerated(string statementId, string customerId, Dat
 public void PublishStatementPosted(string statementId, string customerId, DateTime statementPosted, DateTime statementDue, string statementLink)
 ```
 ```c
-public void PublishOneTimeCharge(string customerId, string type, string amount, string chargeDate, string chargeDescription)
+public void PublishOneTimeCharge(string customerId, string type, string amount, string chargeDate, string chargeDescription, float currentBalance, float previousBalance)
 ```
 
 ```c
