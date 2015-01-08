@@ -20,7 +20,7 @@ namespace DTH.Notifications.Default
         {
             return;
         }
-        public void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
+        public void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription, float currentBalance, float previousBalance)
         {
             return;
         }

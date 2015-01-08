@@ -18,7 +18,7 @@ namespace DTH.Notifications.Tester
 
                 publisher.PublishCycleCharge("CHRG-CYCLE", "123456789", "1111111111", "TRANSID-123456789", 59.95f, "APPROVED", 0.00f, DateTime.Now, 59.95f);
 
-                publisher.PublishOneTimeCharge("CHRG-ONETIME", "123456789", "ONETIMECHARGETYPE", 100.00f, DateTime.Now, "One time charge description");
+                publisher.PublishOneTimeCharge("CHRG-ONETIME", "123456789", "ONETIMECHARGETYPE", 100.00f, DateTime.Now, "One time charge description", 25.00f, 125.00f);
 
                 publisher.PublishStatementGenerated("STATEMENTGENERATED-ID", "123456789", DateTime.Now, DateTime.Now, @"http://dthapi01-aio10.tresta.com/statements/STATEMENTGENERATED-ID");
 

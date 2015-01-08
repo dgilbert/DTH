@@ -45,7 +45,7 @@ namespace Tresta.Notifications
             cycleChargeNotification.publish();
         }
 
-        public void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription)
+        public void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription, float currentBalance, float previousBalance)
         {
             OneTimeChargeNotification oneTimeChargeNotification = new OneTimeChargeNotification();
             oneTimeChargeNotification.ChargeId = chargeId;
@@ -54,6 +54,8 @@ namespace Tresta.Notifications
             oneTimeChargeNotification.Amount = amount.ToString("0.00");
             oneTimeChargeNotification.ChargeDate = chargeDate.ToString("o");
             oneTimeChargeNotification.ChargeDescription = chargeDescription;
+            oneTimeChargeNotification.CurrentBalance = currentBalance.ToString("0.00");
+            oneTimeChargeNotification.PreviousBalance = previousBalance.ToString("0.00");
             oneTimeChargeNotification.publish();
         }
 

@@ -50,7 +50,9 @@ namespace DTH.Notifications
         /// <param name="amount"></param>
         /// <param name="chargeDate"></param>
         /// <param name="chargeDescription"></param>
-        void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription);
+        /// <param name="currentBalance"></param>
+        /// <param name="previousBalance"></param>
+        void PublishOneTimeCharge(string chargeId, string customerId, string type, float amount, DateTime chargeDate, string chargeDescription, float currentBalance, float previousBalance);
 
         /// <summary>
         /// Generated Credits/Debits are in Web Portal
