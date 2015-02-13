@@ -28,5 +28,9 @@ namespace DTH.Notifications.Default
         {
             return;
         }
+        public void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance)
+        {
+            return;
+        }
     }
 }

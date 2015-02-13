@@ -65,5 +65,18 @@ namespace DTH.Notifications
         /// <param name="currentBalance"></param>
         /// <param name="previousBalance"></param>
         void PublishTransaction(string transactionId, string customerId, string cardExternalId, float amount, string transactionType, float currentBalance, float previousBalance);
+
+        /// <summary>
+        /// Generated when a user enters a Credit Note in the DTH portal
+        /// </summary>
+        /// <param name="paymentId"></param>
+        /// <param name="customerId"></param>
+        /// <param name="creditNoteType"></param>
+        /// <param name="amount"></param>
+        /// <param name="paymentDate"></param>
+        /// <param name="paymentDescription"></param>
+        /// <param name="currentBalance"></param>
+        /// <param name="previousBalance"></param>
+        void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance);
     }
 }

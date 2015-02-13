@@ -71,5 +71,19 @@ namespace Tresta.Notifications
             transactionNotification.PreviousBalance = previousBalance.ToString("0.00");
             transactionNotification.publish();
         }
+
+        public void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance)
+        {
+            CreditNoteNotification creditNoteNotification = new CreditNoteNotification();
+            creditNoteNotification.PaymentId = paymentId;
+            creditNoteNotification.CustomerId = customerId;
+            creditNoteNotification.CreditNoteType = creditNoteType;
+            creditNoteNotification.Amount = amount.ToString("0.00");
+            creditNoteNotification.PaymentDate = paymentDate.ToString("o");
+            creditNoteNotification.PaymentDescription = paymentDescription;
+            creditNoteNotification.CurrentBalance = currentBalance.ToString("0.00");
+            creditNoteNotification.PreviousBalance = previousBalance.ToString("0.00");
+            creditNoteNotification.publish();
+        }
     }
 }
