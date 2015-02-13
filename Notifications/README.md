@@ -55,3 +55,7 @@ public void PublishOneTimeCharge(string customerId, string type, string amount, 
 ```c
 public void PublishTransaction(string customerId, string cardExternalId, string amount, string transactionType, float currentBalance, float previousBalance)
 ```
+
+```c#
+public void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance)
+```
