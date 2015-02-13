@@ -42,16 +42,20 @@ publisher.PublishCycleCharge("123456789", "1111111111", "TRANSID-123456789", 59.
 ```
 
 ####Other Interface Methods
-```c
+```c#
 public void PublishStatementGenerated(string statementId, string customerId, DateTime statementGenerated, DateTime statementDue, string statementLink)
 ```
-```c
+```c#
 public void PublishStatementPosted(string statementId, string customerId, DateTime statementPosted, DateTime statementDue, string statementLink)
 ```
-```c
+```c#
 public void PublishOneTimeCharge(string customerId, string type, string amount, string chargeDate, string chargeDescription, float currentBalance, float previousBalance)
 ```
 
-```c
+```c#
 public void PublishTransaction(string customerId, string cardExternalId, string amount, string transactionType, float currentBalance, float previousBalance)
+```
+
+```c#
+public void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance)
 ```
