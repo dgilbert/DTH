@@ -49,6 +49,7 @@
     <Compile Include="Notifications\CreditNoteNotification.cs" />
     <Compile Include="Notifications\CycleChargeNotification.cs" />
     <Compile Include="NotificationPublisher.cs" />
+    <Compile Include="Notifications\ErrorNotification.cs" />
     <Compile Include="Notifications\OneTimeChargeNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Notifications\StatementGeneratedNotification.cs" />

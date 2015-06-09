@@ -32,5 +32,9 @@ namespace DTH.Notifications.Default
         {
             return;
         }
+        public void PublishError(string errorSource, string errorMessage, string customerId, string severity)
+        {
+            return;
+        }
     }
 }
