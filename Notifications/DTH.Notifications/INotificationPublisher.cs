@@ -78,5 +78,15 @@ namespace DTH.Notifications
         /// <param name="currentBalance"></param>
         /// <param name="previousBalance"></param>
         void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="errorSource"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="customerId"></param>
+        /// <param name="severity"></param>
+        void PublishError(string errorSource, string errorMessage, string customerId, string severity);
+        
     }
 }

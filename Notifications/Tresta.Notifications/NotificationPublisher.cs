@@ -85,5 +85,15 @@ namespace Tresta.Notifications
             creditNoteNotification.PreviousBalance = previousBalance.ToString("0.00");
             creditNoteNotification.publish();
         }
+
+        public void PublishError(string errorSource, string errorMessage, string customerId, string severity)
+        {
+            ErrorNotification errorNotification = new ErrorNotification();
+            errorNotification.ErrorSource = errorSource;
+            errorNotification.ErrorMessage = errorMessage;
+            errorNotification.CustomerId = customerId;
+            errorNotification.Severity = severity;
+            errorNotification.publish();
+        }
     }
 }
