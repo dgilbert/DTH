@@ -18,6 +18,7 @@ Run-time, Dynamic DLL
     * StatementGeneratedNotification -- Generated when a statement is generated for a DTH Customer.
     * StatementPostedNotification -- Generated when DTH Posts a Statement(likely not used)
     * TransactionNotification -- Generated when the Admin Portal is used to Post a Payment/Charge.
+    * ErrorNotification -- Generated when and error condition occurs within the DTH system
   * These objects will be serialized to JSON and published to RabbitMQ based on the settings retrieved from app.config.
 
 Example App.config
@@ -58,4 +59,8 @@ public void PublishTransaction(string customerId, string cardExternalId, string 
 
 ```c#
 public void PublishCreditNote(string paymentId, string customerId, string creditNoteType, float amount, DateTime paymentDate, string paymentDescription, float currentBalance, float previousBalance)
+```
+
+```c#
+public void PublishError(string errorSource, string errorMessage, string customerId, string severity)
 ```
