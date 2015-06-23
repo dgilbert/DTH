@@ -23,7 +23,7 @@ namespace Tresta.Notifications
         {
             LobbyPushPdfStatement lobbyPushPdfStatement = new LobbyPushPdfStatement();
             lobbyPushPdfStatement.PutStatement(statementId, customerId, statementPosted, statementLink);
-            
+
             StatementPostedNotification statementPostedNotification = new StatementPostedNotification();
             statementPostedNotification.StatementId = statementId;
             statementPostedNotification.CustomerId = customerId;
