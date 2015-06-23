@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="AMQPUtil.cs" />
     <Compile Include="Notifications\CreditNoteNotification.cs" />
+    <Compile Include="LobbyPushPdfStatement.cs" />
     <Compile Include="Notifications\CycleChargeNotification.cs" />
     <Compile Include="NotificationPublisher.cs" />
     <Compile Include="Notifications\ErrorNotification.cs" />

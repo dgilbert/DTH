@@ -16,10 +16,15 @@ namespace DTH.Notifications.Tester
             {
                 INotificationPublisher publisher = NotificationPublisher.Instance;
 
+                        
+
+                publisher.PublishError("CycleBilling", "Customer was added to the BillingStatus table", "123456789", "ERROR");
+
+                /*
                 publisher.PublishCycleCharge("CHRG-CYCLE", "219806959", "6cbb42547ad1201901624c10b1db1f59", "TRANSID-123456789", 59.95f, "SUCCESS", 100.00f, DateTime.Now, 159.95f);
                 publisher.PublishCycleCharge("CHRG-CYCLE", "219806959", "6cbb42547ad1201901624c10b1db1f59", "TRANSID-123456789", 159.95f, "FAIL", 159.95f, DateTime.Now, 159.95f);
 
-                /*
+                
                 publisher.PublishOneTimeCharge("CHRG-ONETIME", "123456789", "ONETIMECHARGETYPE", 100.00f, DateTime.Now, "One time charge description", 25.00f, 125.00f);
 
                 publisher.PublishStatementGenerated("STATEMENTGENERATED-ID", "123456789", DateTime.Now, DateTime.Now, @"http://dthapi01-aio10.tresta.com/statements/STATEMENTGENERATED-ID");
@@ -29,10 +34,14 @@ namespace DTH.Notifications.Tester
                 publisher.PublishTransaction("TRANS-ID", "123456789", Guid.NewGuid().ToString(), 123.00f, "CREDIT", 45.00f, 168.00f);
                 
                 
-                */
+                
                 
                 publisher.PublishCreditNote("CRDT1000000000000","219806959","MISC", 35.00f, DateTime.Now, "Miscellaneous Credit because I am a nice person!", 0.00f, 35.00f);
+                */
+
                 ++i;
+
+                
 
             }
             TimeSpan timeDiff = DateTime.Now - start;

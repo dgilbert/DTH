@@ -21,6 +21,9 @@ namespace Tresta.Notifications
 
         public void PublishStatementPosted(string statementId, string customerId, DateTime statementPosted, DateTime statementDue, string statementLink)
         {
+            LobbyPushPdfStatement lobbyPushPdfStatement = new LobbyPushPdfStatement();
+            lobbyPushPdfStatement.PutStatement(statementId, customerId, statementPosted, statementLink);
+            
             StatementPostedNotification statementPostedNotification = new StatementPostedNotification();
             statementPostedNotification.StatementId = statementId;
             statementPostedNotification.CustomerId = customerId;
